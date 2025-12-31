@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Instagram Desktop Chat</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body{
+    background:#000;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* App Container */
+.app{
+    width:95%;
+    height:92vh;
+    background:#000;
+    display:flex;
+    border:1px solid #262626;
+}
+
+/* Sidebar (Inbox) */
+.sidebar{
+    width:28%;
+    border-right:1px solid #262626;
+    display:flex;
+    flex-direction:column;
+}
+
+/* Sidebar Header */
+.sidebar-header{
+    padding:18px;
+    color:#fff;
+    font-size:20px;
+    font-weight:600;
+    border-bottom:1px solid #262626;
+}
+
+/* Chat List */
+.chat-list{
+    flex:1;
+    overflow-y:auto;
+}
+
+.chat-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:14px 18px;
+    cursor:pointer;
+}
+
+.chat-item:hover{
+    background:#121212;
+}
+
+.chat-item img{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+}
+
+.chat-info h4{
+    color:#fff;
+    font-size:15px;
+}
+
+.chat-info p{
+    color:#a8a8a8;
+    font-size:13px;
+}
+
+/* Chat Area */
+.chat-area{
+    width:72%;
+    display:flex;
+    flex-direction:column;
+}
+
+/* Chat Header */
+.chat-header{
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 20px;
+    border-bottom:1px solid #262626;
+}
+
+.chat-user{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.chat-user img{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+}
+
+.chat-user h3{
+    color:#fff;
+    font-size:16px;
+}
+
+.chat-actions span{
+    color:#fff;
+    font-size:20px;
+    margin-left:20px;
+    cursor:pointer;
+}
+
+/* Messages */
+.messages{
+    flex:1;
+    padding:25px;
+    overflow-y:auto;
+    background:#000;
+}
+
+.message{
+    max-width:55%;
+    padding:10px 14px;
+    margin-bottom:10px;
+    font-size:14px;
+    line-height:1.4;
+}
+
+.received{
+    background:#262626;
+    color:#fff;
+    border-radius:18px 18px 18px 4px;
+}
+
+.sent{
+    background:#3797f0;
+    color:#fff;
+    margin-left:auto;
+    border-radius:18px 18px 4px 18px;
+}
+
+/* Message with avatar */
+.msg-row{
+    display:flex;
+    align-items:flex-end;
+    gap:8px;
+}
+
+.msg-row img{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+}
+
+/* Input Area */
+.input-area{
+    height:75px;
+    border-top:1px solid #262626;
+    display:flex;
+    align-items:center;
+    padding:0 20px;
+    gap:15px;
+}
+
+.input-area input{
+    flex:1;
+    background:#262626;
+    border:none;
+    outline:none;
+    color:#fff;
+    padding:12px 18px;
+    border-radius:22px;
+    font-size:14px;
+}
+
+.input-area span{
+    color:#3797f0;
+    font-size:15px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-header">Messages</div>
+
+        <div class="chat-list">
+            <div class="chat-item">
+                <img src="https://i.pravatar.cc/100?img=32">
+                <div class="chat-info">
+                    <h4>alex_d</h4>
+                    <p>Hey 👋 · 2h</p>
+                </div>
+            </div>
+
+            <div class="chat-item">
+                <img src="https://i.pravatar.cc/100?img=45">
+                <div class="chat-info">
+                    <h4>emma_s</h4>
+                    <p>Seen · yesterday</p>
+                </div>
+            </div>
+
+            <div class="chat-item">
+                <img src="https://i.pravatar.cc/100?img=18">
+                <div class="chat-info">
+                    <h4>john_kr</h4>
+                    <p>Typing...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Area -->
+    <div class="chat-area">
+
+        <!-- Header -->
+        <div class="chat-header">
+            <div class="chat-user">
+                <img src="https://i.pravatar.cc/100?img=32">
+                <h3>alex_d</h3>
+            </div>
+            <div class="chat-actions">
+                <span>📞</span>
+                <span>📹</span>
+                <span>ℹ️</span>
+            </div>
+        </div>
+
+        <!-- Messages -->
+        <div class="messages">
+            <div class="msg-row">
+                <img src="https://i.pravatar.cc/100?img=32">
+                <div class="message received">Hey! This is desktop Instagram style 😎</div>
+            </div>
+
+            <div class="message sent">Yes 🔥 It looks big and real!</div>
+
+            <div class="msg-row">
+                <img src="https://i.pravatar.cc/100?img=32">
+                <div class="message received">Only HTML & CSS?</div>
+            </div>
+
+            <div class="message sent">100% HTML + CSS 💯</div>
+        </div>
+
+        <!-- Input -->
+        <div class="input-area">
+            <input type="text" placeholder="Message...">
+            <span>Send</span>
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
